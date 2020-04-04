@@ -6,7 +6,7 @@ As a service to the community and open research, these data are made available u
 The Duke Forge/Duke University Social Science Research Institute (SSRI) COVID19 Digital Lab commissioned this survey, which is being conducted by Clarity+Campaign Labs (CCL) from March 29-31, 2020 through the next 5 weeks. 
 
 Full details of the survey methodology, the questionnaire instrument, and the data may be accessed and freely used here.
-___
+
 * **Don Taylor, PhD**, Director of the Duke Social Science Research Institute
 * **Erich S. Huang, MD, PhD**, Director of Duke Forge
 ___
