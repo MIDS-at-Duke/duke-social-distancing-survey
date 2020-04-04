@@ -6,6 +6,9 @@ As a service to the community and open research, these data are made available u
 The Duke Forge/Duke University Social Science Research Institute (SSRI) COVID19 Digital Lab commissioned this survey, which is being conducted by Clarity+Campaign Labs (CCL) from March 29-31, 2020 through DATE-DATE-DATE. 
 
 Full details of the survey methodology, the questionnaire instrument, and the data may be accessed and freely used here.
+
+Don Taylor, PhD, Director of the Duke Social Science Research Institute
+Erich S. Huang, MD, PhD, Director of Duke Forge
 ___
 * Raw survey data can be found in `00_raw_data`, with data organized by survey wave.
 * Top-line summary statistics can be found in `40_reports/Survey_Summaries`.
