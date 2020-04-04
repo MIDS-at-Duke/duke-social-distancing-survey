@@ -7,8 +7,9 @@ The Duke Forge/Duke University Social Science Research Institute (SSRI) COVID19 
 
 Full details of the survey methodology, the questionnaire instrument, and the data may be accessed and freely used here.
 
-Don Taylor, PhD, Director of the Duke Social Science Research Institute
-Erich S. Huang, MD, PhD, Director of Duke Forge
+**Don Taylor, PhD**, Director of the Duke Social Science Research Institute
+
+**Erich S. Huang, MD, PhD**, Director of Duke Forge
 ___
 * Raw survey data can be found in `00_raw_data`, with data organized by survey wave.
 * Top-line summary statistics can be found in `40_reports/Survey_Summaries`.
