@@ -1,7 +1,7 @@
 # Duke Forge/SSRI COVID19 Digital Lab Social Distancing Survey
 **WELCOME** to the Github repository for the Duke Forge/SSRI COVID19 Digital Lab Social Distancing Survey. 
 The aim of this survey--that will occurring on weekly waves planned for ~6 weeks total--is to survey North Carolina residents on their social mitigation practices and attitudes during the SARS-CoV-2/COVID-19. 
-As a service to the community and open research, these data are made available under a Creative Commons Attribution-NonCommercial 4.0. License.
+As a service to the community and open research, these data are made available under a [Creative Commons Attribution-NonCommercial 4.0. License](http://creativecommons.org/licenses/by-nc/4.0/).
 
 The Duke Forge/Duke University Social Science Research Institute (SSRI) COVID19 Digital Lab commissioned this survey, which is being conducted by Clarity+Campaign Labs (CCL) from March 29-31, 2020 through the next 5 weeks. 
 
