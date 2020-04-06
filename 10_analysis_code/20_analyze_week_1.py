@@ -6,13 +6,6 @@ svy = pd.read_csv('../00_raw_data/20200401_duke_covid_survey/'
                   'raw_survey_data_202004_LABELED.csv')
 
 #########
-# Set to common top-codes
-#########
-svy['Q10. Times in Group > 20 in Last Week'].value_counts(dropna=False)
-svy.loc[svy['Q10. Times in Group > 20 in Last Week'] >9, 
-        'Q10. Times in Group > 20 in Last Week'] = 9
-
-#########
 # Race is MOSTLY black and white, so re-group:
 #########
 race = 'Q19-20. Race + Ethnicity'
@@ -32,27 +25,31 @@ svy[race] = svy[race].replace({'Asian': 'Other',
 from statsmodels.stats.weightstats import DescrStatsW
 
 def get_group_mean(data, question):
-    temp = data[[question, 'weight2']]
-    temp = temp[temp[question] !=127]
+    temp = data[[question, 'weight']]
     temp = temp[pd.notnull(temp[question])]
-    wsvy = DescrStatsW(temp[question], temp['weight2'])
+    wsvy = DescrStatsW(temp[question], temp['weight'])
     return wsvy.mean
 
-
 for num in ['None', 'One', 'Two']:
-    svy['zero_children'] = svy['Q5. Children in HH'] == num
+    svy[num] = svy['Q5. Children in HH'] == num
     svy['dummy'] = 1
 
-    # Raw average of 62% is high. 
-    raw = svy['zero_children'].mean()
+    raw = svy[num].mean()
 
-    w = svy.groupby('dummy').apply(lambda x: get_group_mean(x, 'zero_children'))
+    w = svy.groupby('dummy').apply(lambda x: get_group_mean(x, num))
     w = w.iloc[0]
     
-    print(f'raw avg with {num} kids: ')
-    print(f'raw share: {raw:.3f}')
-    print(f'weighted straight: {w:.3f}')
+    print(f'Share households with {num} kids:')
+    print(f'\t raw share: {raw:.3f}')
+    print(f'\t weighted share: {w:.3f}')
 
+    if num == 'None':
+        assert np.abs(w - 0.6) < 0.005
+    if num == 'One':
+        assert np.abs(w - 0.15) < 0.005
+    if num == 'Two':
+        assert np.abs(w - 0.17) < 0.005
+        
 ##########
 # In a big group in last week?
 ##########
@@ -60,15 +57,15 @@ for num in ['None', 'One', 'Two']:
 
 from statsmodels.stats.weightstats import DescrStatsW
 
-def get_group_mean(data, question):
-    temp = data[[question, 'weight']]
-    temp = temp[temp[question] !=127]
-    temp = temp[pd.notnull(temp[question])]
-    wsvy = DescrStatsW(temp[question], temp['weight'])
-    return wsvy.mean
+big_group = 'Q10. Times in Group > 20 in Last Week'
+svy['any_big_group']= (svy[big_group] > 0) & pd.notnull(svy[big_group])
+svy.loc[pd.isnull(svy[big_group]), 'any_big_group'] = np.nan
 
 svy.groupby('Q19-20. Race + Ethnicity').apply(
-    lambda x: get_group_mean(x, 'Q10. Times in Group > 20 in Last Week'))
+    lambda x: get_group_mean(x, big_group))
+
+svy.groupby('Q19-20. Race + Ethnicity').apply(
+    lambda x: get_group_mean(x, 'any_big_group'))
 
 
 ########
