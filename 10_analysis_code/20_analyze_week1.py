@@ -3,7 +3,7 @@ import numpy as np
 import re
 
 svy = pd.read_csv('../00_raw_data/20200401_duke_covid_survey/'
-                  'raw_survey_data_202004_LABELED.csv')
+                  'raw_survey_data_202004_CLEANED.csv')
 
 #########
 # Race is MOSTLY black and white, so re-group:

@@ -21,7 +21,9 @@ svy = pd.read_csv('../00_raw_data/20200401_duke_covid_survey'
                   delimiter='\t')
 
 # Keep only people who finish survey. 
-svy = svy[pd.notnull(svy.q17)].copy()
+# Clarity defines as "has valid response for q17", so we'll use that too. 
+svy = svy[pd.notnull(svy.q17) & (svy.q17 != 127) & (svy.q17 != 4)].copy()
+
 
 # Non-IVR people exceed top-codes regularly. Recode those:
 quant_questions = ['q4', 'q6', 'q7', 'q10', 'q12']
@@ -46,9 +48,10 @@ for c in quant_questions:
     svy[c] = svy[c].replace(127, np.nan)
 
     
+    
 drop_rollups = [n for n in svy.columns if not re.match('.*_rollup', n)]
 svy = svy[drop_rollups]
 svy = svy.rename(names, axis='columns')
 svy.sample().T
 
-svy.to_csv('../00_raw_data/20200401_duke_covid_survey/raw_survey_data_202004_LABELED.csv')
+svy.to_csv('../00_raw_data/20200401_duke_covid_survey/raw_survey_data_202004_CLEANED.csv')
