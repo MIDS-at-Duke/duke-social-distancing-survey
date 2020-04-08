@@ -45,10 +45,22 @@ svy.loc[svy['Q6. Non-HH Face to Face Count'] == 9, 'close_interactions'] = np.na
 # Some people list more "safe" interactions than total distances. 
 svy.loc[svy['close_interactions'] < 0, 'close_interactions'] = 0
 
+# Most variation is 0-1. 
+svy['any_close_interactions'] = (svy['close_interactions'] > 0)
+svy.loc[pd.isnull(svy.close_interactions), 'any_close_interactions'] = np.nan
+svy['any_close_interactions'].value_counts(dropna=False)
+
 # Ever in a big group?
 big_group = 'Q10. Times in Group > 20 in Last Week'
 svy['ever_in_group']= (svy[big_group] > 0) & pd.notnull(svy[big_group])
 svy.loc[pd.isnull(svy[big_group]), 'ever_in_group'] = np.nan
+
+working = 'Q8. HH Member Going to Work'
+svy['someone_working'] = svy[working] == 'Yes'
+svy.loc[~svy[working].isin(["No", "Yes"]), 'someone_working'] = np.nan
+
+# Race shorthand
+svy['race'] = svy['Q19-20. Race + Ethnicity']
 
 ##########
 # Save

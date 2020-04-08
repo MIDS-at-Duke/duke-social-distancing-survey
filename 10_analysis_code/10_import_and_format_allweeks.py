@@ -66,6 +66,10 @@ for f in files.keys():
     svy = svy.rename(names, axis='columns')
     svy.sample().T
 
+    # Some answers to questions on working not valid
+    working = 'Q8. HH Member Going to Work'
+    svy.loc[~svy[working].isin(["No", "Yes", 'Unsure']), working] = np.nan
+
     svy['week'] = f
     
     svy.to_csv(f'../20_analysis_datasets/survey_data_{f}_CLEANED.csv', index=False)
