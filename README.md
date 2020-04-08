@@ -7,6 +7,8 @@ The Duke Forge/Duke University Social Science Research Institute (SSRI) COVID19 
 
 Full details of the survey methodology, the questionnaire instrument, and the data may be accessed and freely used here.
 
+You can find an example analysis notebook in the `10_analysis_code` [file here](https://github.com/MIDS-at-Duke/duke-social-distancing-survey/blob/master/10_analysis_code/Example_Analysis_Notebook.ipynb) with details on how to work with this data in Python. 
+
 * **Don Taylor, PhD**, Director of the Duke Social Science Research Institute
 * **Erich S. Huang, MD, PhD**, Director of Duke Forge
 ___
