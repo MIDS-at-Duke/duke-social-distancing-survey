@@ -14,11 +14,22 @@ A cleaned merged survey file with value labels can be found in `20_analysis_data
 * **Don Taylor, PhD**, Director of the Duke Social Science Research Institute
 * **Erich S. Huang, MD, PhD**, Director of Duke Forge
 
+## Methodology
 
-___
-* Note this is a WEIGHTED survey, so raw averages do not constitute consistent estimates of population attributes.
-* Top-line summary statistics can be found in `40_reports/Survey_Summaries`.
-* Survey instrument can be found in `SurveyQuestions.pdf`.
+This survey is composed of two samples: individuals who answered automated (IVR) surveys (via landlines), and individuals who answered (live) cell-phone survey calls. 
+
+The universe of phone numbers from which individuals were selected comes from commercial appends to voter registration data in addition to commercially collected numbers of non-registered individuals consolidated by TargetSmart. 
+
+Youth in the survey are also over-sampled to compensate for lower response rates.
+
+Data is then re-weighted to be representative of the North Carolina adult (>18) population. 
+
+Note that because this is a WEIGHTED survey, raw averages do not constitute consistent estimates of population attributes.
+Top-line summary statistics can be found in `40_reports/Survey_Summaries`.
+Survey instrument can be found in `SurveyQuestions.pdf`.
+
+Response rates can be found in `40_reports/estimated_response_rates_20200421.xlsx`. 
+
 ___
 <img src="https://github.com/dukeforge/duke-social-distancing-survey/raw/master/assets/socialDistancePolling.png" width="400">
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
