@@ -12,9 +12,13 @@ svy = pd.read_csv('../20_analysis_datasets/merged_surveys.csv')
 # Add sample convenience vars
 ###########
 
-svy['week1'] = svy['week'] == 'week1'
-svy['week2'] = svy['week'] == 'week2'
+for i in range(1,5):
+    svy[f'week{i}'] = svy['week'] == f'week{i}'
+
 svy['full_sample'] = 1
+
+# IRB Compliance
+svy = svy[svy['week'] != 'week4']
 
 ###########
 # Demographic cleaning
@@ -63,8 +67,17 @@ svy.loc[~svy[working].isin(["No", "Yes"]), 'someone_working'] = np.nan
 svy['race'] = svy['Q19-20. Race + Ethnicity']
 
 ##########
-# Save
+# Age demographics
 ##########
 
+svy['age_ranges'] = ''
+svy.loc[(18 < svy['age']) & (svy['age'] < 35), 'age_ranges'] = '< 35'
+svy.loc[(35 <= svy['age']) & (svy['age'] < 55), 'age_ranges'] = '35 - 55'
+svy.loc[(55 <= svy['age']) & (svy['age'] < 65), 'age_ranges'] = '55 - 65'
+svy.loc[(65 <= svy['age']), 'age_ranges'] = '> 65'
+
+##########
+# Save
+##########
 
 svy.to_csv('../20_analysis_datasets/merged_surveys_w_analysis_vars.csv')
