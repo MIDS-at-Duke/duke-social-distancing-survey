@@ -32,7 +32,7 @@ Response rates can be found in `40_reports/estimated_response_rates_20200421.xls
 
 ## ERRATA: 
 
-Between weeks 3 and 4 of our survey, it was discovered that an error had been in calculating weights for college educated respondents. **ALL** data and reports were updated with correct weights in commit 66de10801c8921968e27f16cba02e762cef07154, but some press releases made prior to this commit do reflect this error. As far as we can tell, the error was quite small and did not have any substantively meaningful effect on results, but be sure to use updated data for all analyses!
+Between weeks 3 and 4 of our survey, it was discovered that an error had been in calculating weights for college educated respondents. **ALL** data and reports were updated with correct weights in commit [66de10](https://github.com/MIDS-at-Duke/duke-social-distancing-survey/commit/66de10801c8921968e27f16cba02e762cef07154), but some press releases made prior to this commit do reflect this error. As far as we can tell, the error was quite small and did not have any substantively meaningful effect on results, but be sure to use updated data for all analyses!
 
 ___
 <img src="https://github.com/dukeforge/duke-social-distancing-survey/raw/master/assets/socialDistancePolling.png" width="400">
