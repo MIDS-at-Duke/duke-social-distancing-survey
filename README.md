@@ -30,6 +30,10 @@ Survey instrument can be found in `SurveyQuestions.pdf`.
 
 Response rates can be found in `40_reports/estimated_response_rates_20200421.xlsx`. 
 
+## ERRATA: 
+
+Between weeks 3 and 4 of our survey, it was discovered that an error had been in calculating weights for college educated respondents. **ALL** data and reports were updated with correct weights in commit 66de10801c8921968e27f16cba02e762cef07154, but some press releases made prior to this commit do reflect this error. As far as we can tell, the error was quite small and did not have any substantively meaningful effect on results, but be sure to use updated data for all analyses!
+
 ___
 <img src="https://github.com/dukeforge/duke-social-distancing-survey/raw/master/assets/socialDistancePolling.png" width="400">
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
