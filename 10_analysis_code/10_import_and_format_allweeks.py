@@ -82,7 +82,7 @@ for f in files.keys():
 
 svys = [pd.read_csv(f'../20_analysis_datasets/'
                     f'survey_data_week{i}_CLEANED.csv')
-        for i in range(1,4)]
+        for i in range(1,5)]
 merged = pd.concat(svys, sort=False)
 merged.to_csv('../20_analysis_datasets/merged_surveys.csv', 
               index=False)
