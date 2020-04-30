@@ -17,9 +17,6 @@ for i in range(1,5):
 
 svy['full_sample'] = 1
 
-# IRB Compliance
-svy = svy[svy['week'] != 'week4']
-
 ###########
 # Demographic cleaning
 ###########
@@ -75,6 +72,19 @@ svy.loc[(18 < svy['age']) & (svy['age'] < 35), 'age_ranges'] = '< 35'
 svy.loc[(35 <= svy['age']) & (svy['age'] < 55), 'age_ranges'] = '35 - 55'
 svy.loc[(55 <= svy['age']) & (svy['age'] < 65), 'age_ranges'] = '55 - 65'
 svy.loc[(65 <= svy['age']), 'age_ranges'] = '> 65'
+
+##########
+# College
+##########
+
+svy['college_degree'] = (svy['Q18. College Degree'] == 'Yes')
+svy.loc[~svy['Q18. College Degree'].isin(['Yes', 'No']), 'college_degree'] = np.nan
+
+##########
+# Survey mode
+##########
+
+svy['live_survey'] = svy['Survey Mode'] == 'Live'
 
 ##########
 # Save
