@@ -12,7 +12,7 @@ svy = pd.read_csv('../20_analysis_datasets/merged_surveys.csv')
 # Add sample convenience vars
 ###########
 
-for i in range(1,5):
+for i in [1, 2, 3, 4, 6]:
     svy[f'week{i}'] = svy['week'] == f'week{i}'
 
 svy['full_sample'] = 1

@@ -10,7 +10,8 @@ import json
 files = {'week1': '20200401_duke_covid_survey_wk1',
          'week2': '20200407_duke_covid_survey_wk2',
          'week3': '20200413_duke_covid_survey_wk3',
-         'week4': '20200420_duke_covid_survey_wk4'}
+         'week4': '20200420_duke_covid_survey_wk4',
+         'week6': '20200512_duke_covid_survey_wk6'}
 
 for f in files.keys():
 
@@ -82,7 +83,7 @@ for f in files.keys():
 
 svys = [pd.read_csv(f'../20_analysis_datasets/'
                     f'survey_data_week{i}_CLEANED.csv')
-        for i in range(1,5)]
+        for i in [1, 2, 3, 4, 6]]
 merged = pd.concat(svys, sort=False)
 merged.to_csv('../20_analysis_datasets/merged_surveys.csv', 
               index=False)
